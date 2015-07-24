@@ -7,5 +7,4 @@ RUN apt-get update
 # Install nodejs
 RUN curl --silent --location https://deb.nodesource.com/setup_${NODE_VERSION} | bash - && apt-get install --yes nodejs
 # Install ruby
-RUN apt-get install --yes ruby-build
-RUN wget https://raw.githubusercontent.com/sstephenson/ruby-build/master/share/ruby-build/${RUBY_VERSION} && ruby-build $RUBY_VERSION /usr/bin
+RUN apt-get install --yes ruby-build && wget https://raw.githubusercontent.com/sstephenson/ruby-build/master/share/ruby-build/${RUBY_VERSION} && ruby-build $RUBY_VERSION /usr/bin && rm $RUBY_VERSION && rm -rf /tmp/*.log
