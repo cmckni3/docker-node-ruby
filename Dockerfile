@@ -1,4 +1,5 @@
 FROM buildpack-deps:jessie
+MAINTAINER Chris McKnight <cmckni3@gmail.com>
 
 ENV NODE_VERSION 0.10
 ENV RUBY_VERSION 2.1.6
