@@ -9,7 +9,7 @@ RUN curl --silent --location https://deb.nodesource.com/setup_${NODE_VERSION} | 
     && apt-get install --yes nodejs
 # Install ruby
 RUN apt-get install --yes ruby-build \
-    && wget https://raw.githubusercontent.com/sstephenson/ruby-build/master/share/ruby-build/${RUBY_VERSION} \
+    && curl --silent -O https://raw.githubusercontent.com/sstephenson/ruby-build/master/share/ruby-build/${RUBY_VERSION} \
     && ruby-build $RUBY_VERSION /usr/bin \
     && rm $RUBY_VERSION \
     && apt-get --auto-remove --purge --yes remove ruby-build \
