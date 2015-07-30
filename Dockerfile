@@ -3,16 +3,19 @@ MAINTAINER Chris McKnight <cmckni3@gmail.com>
 
 ENV NODE_VERSION 0.10
 ENV RUBY_VERSION 2.1.6
+ENV RUBY_BUILD_TMPDIR /tmp/ruby-build
+ENV RUBY_BUILD_DIR /usr/src/ruby-build
 
 RUN apt-get update
 # Install nodejs
 RUN curl --silent --location https://deb.nodesource.com/setup_${NODE_VERSION} | bash - \
     && apt-get install --yes nodejs
 # Install ruby
-RUN apt-get install --yes ruby-build \
-    && curl --silent -O https://raw.githubusercontent.com/sstephenson/ruby-build/master/share/ruby-build/${RUBY_VERSION} \
-    && ruby-build $RUBY_VERSION /usr/bin \
-    && rm $RUBY_VERSION \
-    && apt-get --auto-remove --purge --yes remove ruby-build \
+RUN git clone --quiet https://github.com/sstephenson/ruby-build.git $RUBY_BUILD_DIR \
+    && ${RUBY_BUILD_DIR}/install.sh \
+    && TMPDIR=$RUBY_BUILD_TMPDIR ruby-build $RUBY_VERSION /usr \
+    && rm -rf $RUBY_BUILD_DIR \
     && rm -rf /tmp/*.log \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf $RUBY_BUILD_TMPDIR
+
+ADD gemrc /usr/etc/gemrc
