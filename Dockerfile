@@ -2,7 +2,7 @@ FROM buildpack-deps:jessie
 MAINTAINER Chris McKnight <cmckni3@gmail.com>
 
 ENV NODE_VERSION 0.10
-ENV RUBY_VERSION 2.1.6
+ENV RUBY_VERSION 2.2.3
 ENV RUBY_BUILD_TMPDIR /tmp/ruby-build
 ENV RUBY_BUILD_DIR /usr/src/ruby-build
 
