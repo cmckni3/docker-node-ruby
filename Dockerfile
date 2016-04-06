@@ -18,6 +18,11 @@ RUN git clone --quiet https://github.com/sstephenson/ruby-build.git $RUBY_BUILD_
     && rm -rf /tmp/*.log \
     && rm -rf $RUBY_BUILD_TMPDIR
 
-RUN gem install bundler
+# skip installing gem documentation
+RUN mkdir -p /usr/local/etc \
+	&& { \
+		echo 'install: --no-document'; \
+		echo 'update: --no-document'; \
+	} >> /usr/local/etc/gemrc
 
-ADD gemrc /usr/etc/gemrc
+RUN gem install bundler
