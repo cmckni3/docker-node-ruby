@@ -28,4 +28,6 @@ RUN mkdir -p /usr/local/etc \
 		echo 'update: --no-document'; \
 	} >> /usr/local/etc/gemrc
 
-RUN gem install bundler
+ENV BUNDLER_VERSION 1.11.2
+
+RUN gem install bundler --version "$BUNDLER_VERSION"
