@@ -1,7 +1,6 @@
 # Docker image for running/building node.js and ruby projects
 
-[![Docker Status](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/cmckni3/node-ruby)
-[![Image Layers](https://badge.imagelayers.io/cmckni3/node-ruby.svg)](https://imagelayers.io/?images=cmckni3/node-ruby:latest 'Get your own badge on imagelayers.io')
+[![Docker Status](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/cmckni3/node-ruby) [![](https://images.microbadger.com/badges/image/cmckni3/node-ruby.svg)](https://microbadger.com/images/cmckni3/node-ruby "Get your own image badge on microbadger.com")
 
 Debian Jessie image based on [library/buildpack-deps](https://github.com/docker-library/buildpack-deps)
 
