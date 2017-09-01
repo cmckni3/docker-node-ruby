@@ -11,13 +11,14 @@ const NODE_VERSIONS = [
   '0.10',
   '0.12',
   '4.x',
-  '5.x',
-  '6.x'
+  '6.x',
+  '8.x'
 ];
 
 const RUBY_VERSIONS = [
+  '2.2.5',
   '2.3.1',
-  '2.2.5'
+  '2.4.1'
 ];
 
 NODE_VERSIONS.forEach((node_version) => {
