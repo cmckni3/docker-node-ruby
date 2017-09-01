@@ -16,8 +16,8 @@ const NODE_VERSIONS = [
 ];
 
 const RUBY_VERSIONS = [
-  '2.2.5',
-  '2.3.1',
+  '2.2.7',
+  '2.3.4',
   '2.4.1'
 ];
 
