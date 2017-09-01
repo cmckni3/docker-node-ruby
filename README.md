@@ -6,8 +6,8 @@ Debian Jessie image based on [library/buildpack-deps](https://github.com/docker-
 
 ## What's Included
 
-* node.js 6.2.x
-* Ruby 2.3.1
+* node.js 0.10, 0.12, 4, 6, 8
+* Ruby 2.2, 2.3, 2.4
 
 ## Building the image
 
