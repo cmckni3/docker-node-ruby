@@ -1,12 +1,12 @@
 FROM buildpack-deps:jessie
 MAINTAINER Chris McKnight <cmckni3@gmail.com>
 
-ENV NODE_VERSION 6.x
-ENV RUBY_MAJOR 2.3
-ENV RUBY_VERSION 2.3.1
+ENV NODE_VERSION 8.x
+ENV RUBY_MAJOR 2.4
+ENV RUBY_VERSION 2.4.1
 ENV RUBY_BUILD_TMPDIR /tmp/ruby-build
 ENV RUBY_BUILD_DIR /usr/src/ruby-build
-ENV RUBYGEMS_VERSION 2.6.4
+ENV RUBYGEMS_VERSION 2.6.13
 
 RUN apt-get update
 # Install nodejs
@@ -28,6 +28,6 @@ RUN mkdir -p /usr/local/etc \
 		echo 'update: --no-document'; \
 	} >> /usr/local/etc/gemrc
 
-ENV BUNDLER_VERSION 1.11.2
+ENV BUNDLER_VERSION 1.15.4
 
 RUN gem install bundler --version "$BUNDLER_VERSION"
