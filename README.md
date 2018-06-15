@@ -6,8 +6,11 @@ Debian Jessie image based on [library/buildpack-deps](https://github.com/docker-
 
 ## What's Included
 
-* node.js 0.10, 0.12, 4, 6, 8
-* Ruby 2.2, 2.3, 2.4
+* nvm
+* rbenv and ruby-build
+
+* default version of node.js
+* default version of ruby
 
 ## Building the image
 
@@ -20,3 +23,4 @@ docker build -t cmckni3/node-ruby .
 ```sh
 docker run -it cmckni3/node-ruby bash
 ```
+
