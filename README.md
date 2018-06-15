@@ -16,6 +16,12 @@ Debian Stretch image based on [library/buildpack-deps](https://github.com/docker
 * Recent version of node.js (latest) installed by default
 * Recent version of Ruby (latest) installed by default
 
+## Pulling the image
+
+```sh
+docker pull cmckni3/node-ruby
+```
+
 ## Building the image
 
 ```sh
