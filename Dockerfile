@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM buildpack-deps:stretch
 MAINTAINER Chris McKnight <cmckni3@gmail.com>
 
 ENV NODE_MAJOR_VERSION 10
@@ -33,5 +33,5 @@ RUN . ~/.bashrc && \
     nvm alias default "${NODE_MAJOR_VERSION}" && \
     rbenv install "${RUBY_VERSION}" && \
     rbenv global "${RUBY_VERSION}" && \
-    gem update --system && \
-    gem install bundler
+    gem update --system
+
