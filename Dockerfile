@@ -5,21 +5,23 @@ ENV NODE_MAJOR_VERSION 10
 ENV YARN_VERSION 1.7.0
 ENV RUBY_MAJOR 2.5
 ENV RUBY_VERSION 2.5.1
-ENV RUBY_BUILD_DIR /tmp/ruby-build
 ENV RUBYGEMS_VERSION 2.6.13
 ENV BUNDLER_VERSION 1.15.4
 
 # skip installing gem documentation
-RUN mkdir -p /usr/local/etc \
-  && { \
+RUN mkdir -p /usr/local/etc && \
+  { \
     echo 'install: --no-document'; \
     echo 'update: --no-document'; \
-  } >> /usr/local/etc/gemrc
+  } >> /usr/local/etc/gemrc && \
+  { \
+    echo "export PATH=/root/.rbenv/bin:/root/.rbenv/shims:\$PATH"; \
+  } >> ~/.bashrc
 
-RUN apt-get update && \
-    apt-get install -y apt-transport-https bash rbenv && \
-    git clone https://github.com/rbenv/ruby-build.git "${RUBY_BUILD_DIR}" && \
-    PREFIX=/usr/local "${RUBY_BUILD_DIR}/install.sh" && \
+RUN . ~/.bashrc && \
+    apt-get update && \
+    apt-get install -y apt-transport-https bash && \
+    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash && \
     curl -o- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && \
