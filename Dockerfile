@@ -1,5 +1,4 @@
 FROM buildpack-deps:stretch
-MAINTAINER Chris McKnight <cmckni3@gmail.com>
 
 ENV NODE_MAJOR_VERSION 10
 ENV YARN_VERSION 1.7.0
