@@ -19,9 +19,8 @@ RUN mkdir -p /usr/local/etc && \
 RUN . ~/.bashrc && \
     apt-get update && \
     apt-get install -y apt-transport-https bash && \
-    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash && \
+    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash && \
     curl -o- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    apt-get install -y rbenv ruby-build && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && \
     apt-get install -y --no-install-recommends yarn && \
