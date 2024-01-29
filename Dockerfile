@@ -1,9 +1,9 @@
-FROM buildpack-deps:stretch
+FROM buildpack-deps:bullseye
 
-ENV NODE_MAJOR_VERSION 10
-ENV YARN_VERSION 1.7.0
-ENV RUBY_MAJOR 2.5
-ENV RUBY_VERSION 2.5.1
+ENV NODE_MAJOR_VERSION 18
+ENV YARN_VERSION 1.9.2
+ENV RUBY_MAJOR 2.7
+ENV RUBY_VERSION 2.7.8
 
 # skip installing gem documentation
 RUN mkdir -p /usr/local/etc && \
