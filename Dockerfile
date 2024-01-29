@@ -30,7 +30,6 @@ RUN . ~/.bashrc && \
 # Install nodejs, yarn, and ruby default versions
 RUN . ~/.bashrc && \
     rbenv install -l && \
-    ruby -v && \
     nvm install "${NODE_MAJOR_VERSION}" && \
     nvm alias default "${NODE_MAJOR_VERSION}" && \
     rbenv install "${RUBY_VERSION}" && \
