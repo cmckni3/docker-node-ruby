@@ -34,4 +34,4 @@ RUN . ~/.bashrc && \
     nvm install "${NODE_MAJOR_VERSION}" && \
     nvm alias default "${NODE_MAJOR_VERSION}" && \
     rbenv install "${RUBY_VERSION}" && \
-    rbenv global "${RUBY_VERSION}" && \
+    rbenv global "${RUBY_VERSION}"
