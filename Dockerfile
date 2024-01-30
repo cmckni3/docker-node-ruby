@@ -1,4 +1,4 @@
-FROM buildpack-deps:bullseye
+FROM buildpack-deps:bookworm
 
 ENV NODE_MAJOR_VERSION 18
 ENV YARN_VERSION 1.9.2
