@@ -81,9 +81,9 @@ jobs:
           tags: ${{ env.TEST_TAG }}
       - name: Test
         run: |
-          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c "which ruby"
-          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c "ruby -v"
-          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c "node -v"
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c ". ~/.bashrc && which ruby"
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c ". ~/.bashrc && ruby -v"
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c ". ~/.bashrc && node -v"
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
