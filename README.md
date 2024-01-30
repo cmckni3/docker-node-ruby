@@ -1,8 +1,8 @@
 # Docker image for running/building node.js and Ruby projects
 
-[![Docker Status](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/cmckni3/node-ruby) [![](https://images.microbadger.com/badges/image/cmckni3/node-ruby.svg)](https://microbadger.com/images/cmckni3/node-ruby "Get your own image badge on microbadger.com")
-![Docker Pulls](https://img.shields.io/docker/pulls/cmckni3/node-ruby?label=Docker%20Hub%20Image%20Pulls)
-[![Image Size](https://img.shields.io/docker/image-size/cmckni3/node-ruby/latest)](https://registry.hub.docker.com/u/cmckni3/node-ruby)
+[![Docker Status](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/cmckni3/node-ruby)
+[![Docker Pulls](https://img.shields.io/docker/pulls/cmckni3/node-ruby?label=Docker%20Hub%20Image%20Pulls)](https://hub.docker.com/r/cmckni3/node-ruby)
+[![Image Size](https://img.shields.io/docker/image-size/cmckni3/node-ruby/latest)](https://hub.docker.com/r/cmckni3/node-ruby)
 
 Debian Bullseye image based on [library/buildpack-deps](https://github.com/docker-library/buildpack-deps)
 
