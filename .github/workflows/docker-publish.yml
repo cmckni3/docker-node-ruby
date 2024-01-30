@@ -82,6 +82,14 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Test Container
+        uses: addnab/docker-run-action@v3
+        with:
+          image: ${{ steps.meta.outputs.tags }}
+          run: |
+            ruby -v
+            node -v
+
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
       # repository is public to avoid leaking data.  If you would like to publish
