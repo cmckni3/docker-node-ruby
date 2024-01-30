@@ -81,6 +81,7 @@ jobs:
           tags: ${{ env.TEST_TAG }}
       - name: Test
         run: |
+          docker run --rm ${{ env.TEST_TAG }} which ruby
           docker run --rm ${{ env.TEST_TAG }} ruby -v
           docker run --rm ${{ env.TEST_TAG }} node -v
 
