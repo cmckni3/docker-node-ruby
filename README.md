@@ -4,7 +4,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/cmckni3/node-ruby?label=Docker%20Hub%20Image%20Pulls)](https://hub.docker.com/r/cmckni3/node-ruby)
 [![Image Size](https://img.shields.io/docker/image-size/cmckni3/node-ruby/latest)](https://hub.docker.com/r/cmckni3/node-ruby)
 
-Debian Bullseye image based on [library/buildpack-deps](https://github.com/docker-library/buildpack-deps)
+- Container image for running/building node.js and Ruby projects.
+- Debian Bookworm image based on [library/buildpack-deps](https://github.com/docker-library/buildpack-deps)
 
 ## What's Included
 
