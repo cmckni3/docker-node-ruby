@@ -1,8 +1,10 @@
-# Docker image for running/building node.js and Ruby projects
+# node.js and Ruby base container image
 
 [![Docker Status](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/cmckni3/node-ruby)
 [![Docker Pulls](https://img.shields.io/docker/pulls/cmckni3/node-ruby?label=Docker%20Hub%20Image%20Pulls)](https://hub.docker.com/r/cmckni3/node-ruby)
 [![Image Size](https://img.shields.io/docker/image-size/cmckni3/node-ruby/latest)](https://hub.docker.com/r/cmckni3/node-ruby)
+
+A container image to use as a starting point for continuous integration for Ruby, node, and frontend projects.
 
 - Container image for running/building node.js and Ruby projects.
 - Debian Bookworm image based on [library/buildpack-deps](https://github.com/docker-library/buildpack-deps)
