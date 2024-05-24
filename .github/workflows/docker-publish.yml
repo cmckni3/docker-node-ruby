@@ -20,6 +20,8 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  # <account>/<repo>:test
+  TEST_TAG: ${{ github.repository }}:test
 
 
 jobs:
@@ -66,6 +68,20 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      # Build and run image before push
+      # https://docs.docker.com/build/ci/github-actions/test-before-push/
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: ${{ env.TEST_TAG }}
+      - name: Test
+        run: |
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c ". ~/.bashrc && which ruby"
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c ". ~/.bashrc && ruby -v"
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c ". ~/.bashrc && node -v"
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
